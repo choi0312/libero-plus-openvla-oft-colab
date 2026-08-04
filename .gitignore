@@ -17,6 +17,8 @@ libero_plus_oft/command.json
 libero_plus_oft/watcher.pid
 libero_plus_oft/watcher_status.json
 libero_plus_oft/a100_runner.log
+libero_plus_oft/idle_gpu_guard.pid
+libero_plus_oft/idle_gpu_guard_status.json
 libero_plus_oft/download_checkpoint.ps1
 libero_plus_oft/download_checkpoint.py
 libero_plus_oft/run.ps1

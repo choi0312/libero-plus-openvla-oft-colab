@@ -67,6 +67,16 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\libero_plus_oft\run_of
 WSLg 창에서 외부 카메라, wrist 카메라, 현재 step/action/success를 확인할 수 있습니다.
 결과는 `libero_plus_oft/output/<run-id>/` 아래에 저장됩니다.
 
+## 30분 idle 시 GPU 자동 종료
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\libero_plus_oft\start_idle_gpu_guard.ps1
+```
+
+guard는 1분마다 Colab 및 로컬 runner 상태를 확인합니다. episode, 추론, 모델 로딩이
+시작되면 타이머를 초기화하고, 연속 30분 동안 아무 작업도 없으면 `openvla` Colab
+세션을 종료합니다. 상태는 `libero_plus_oft/idle_gpu_guard_status.json`에 기록됩니다.
+
 ## VS Code prompt watcher
 
 1. 저장소 폴더를 VS Code로 엽니다.

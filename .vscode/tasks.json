@@ -49,6 +49,13 @@
       "presentation": { "reveal": "always", "panel": "dedicated", "group": "libero-a100", "close": false }
     },
     {
+      "label": "LIBERO-Plus A100: Start 30-minute idle auto-stop",
+      "type": "shell",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\libero_plus_oft\\start_idle_gpu_guard.ps1"],
+      "problemMatcher": []
+    },
+    {
       "label": "LIBERO-Plus A100: Stop Colab session",
       "type": "shell",
       "command": "powershell.exe",
