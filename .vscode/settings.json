@@ -1,0 +1,10 @@
+{
+  "editor.minimap.enabled": false,
+  "files.autoSave": "off",
+  "files.eol": "\n",
+  "files.watcherExclude": {
+    "**/.venv-simpler/**": true,
+    "**/third_party/**": true
+  },
+  "workbench.editor.enablePreview": false
+}

@@ -1,0 +1,59 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "LIBERO-Plus: Install local simulator and assets",
+      "type": "shell",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\install.ps1"],
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated", "close": false }
+    },
+    {
+      "label": "LIBERO-Plus A100: Setup official OFT policy",
+      "type": "shell",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\libero_plus_oft\\setup_colab_a100.ps1"],
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated", "group": "libero-a100", "close": false }
+    },
+    {
+      "label": "LIBERO-Plus A100: Reproduce official hard init-state task",
+      "type": "shell",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\libero_plus_oft\\run_official_failure_sample.ps1"],
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated", "group": "libero-a100", "close": false }
+    },
+    {
+      "label": "LIBERO-Plus A100: Start prompt watcher",
+      "type": "shell",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\libero_plus_oft\\start_prompt_watcher.ps1", "-OpenFiles", "-Monitor"],
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated", "group": "libero-a100", "close": false }
+    },
+    {
+      "label": "LIBERO-Plus A100: Stop prompt watcher",
+      "type": "shell",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\libero_plus_oft\\stop_prompt_watcher.ps1"],
+      "problemMatcher": []
+    },
+    {
+      "label": "LIBERO-Plus A100: Status monitor",
+      "type": "shell",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\libero_plus_oft\\status.ps1"],
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated", "group": "libero-a100", "close": false }
+    },
+    {
+      "label": "LIBERO-Plus A100: Stop Colab session",
+      "type": "shell",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\libero_plus_oft\\stop_colab.ps1"],
+      "problemMatcher": []
+    }
+  ]
+}
